@@ -32,10 +32,10 @@ Template.registerHelper('usernameFromId', function(userId){
     if (typeof user === 'undefined'){
         return 'Guest';
     }
-    if (typeof user.services.github !== 'undefined'){
+/*    if (typeof user.services.github !== 'undefined'){
         return user.services.github.username;
-    }
-    return user.username;
+    }*/
+    return user.username || user.services.github.username;
 });
 
 Template.registerHelper('timestampToTime', function(timestamp){
