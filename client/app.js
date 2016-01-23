@@ -4,7 +4,7 @@ Template.messages.helpers({
 });
 
 Meteor.methods({
-    newMessage: function(message){
+    newMessage: function(userId, message){
         message.timestamp = Date.now();
         message.user = Meteor.userId();
         Messages.insert(message);

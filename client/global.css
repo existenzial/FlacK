@@ -115,6 +115,7 @@ body {
   height: 70px;
   line-height: 53px;
   font-weight: 900;
+  text-shadow: 0px 2px 2px rgba(255, 2, 2, 0.3);
   padding: 0 1rem;
   color: #000000;
   background-image: url('riotface.png');
@@ -345,7 +346,7 @@ body {
 
 /* line 43, ../tests/sass/components/_user-menu.scss */
 .connection_status {
-  color: rgb(240,183,62);
+  color: rgb(255,2,2);
 }
 
 /* line 1, ../tests/sass/components/_input-box.scss */
