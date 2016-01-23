@@ -289,7 +289,8 @@ body {
   border-radius: 0.2rem;
   width: 48px;
   height: 48px;
-  background-image: url("https://secure.gravatar.com/avatar/9c4c112dd115af8a2fe87a70a88a74fd");
+  background-image: url('blmicon.png');    
+  /*background-image: url("https://secure.gravatar.com/avatar/9c4c112dd115af8a2fe87a70a88a74fd");*/
   background-size: cover;
   margin-right: 8px;
 }

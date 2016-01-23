@@ -3,13 +3,14 @@ Template.messages.helpers({
     messages: Messages.find({})
 });
 
-Meteor.methods({
+//The below method on the client-side will throw an error b/c it should require permission from server first. Include insert func in server-side code
+/*Meteor.methods({
     newMessage: function(userId, message){
         message.timestamp = Date.now();
         message.user = Meteor.userId();
         Messages.insert(message);
     }
-});
+});*/
 
 //if user presses 'Enter' after typing a message
 Template.footer.events({
@@ -32,9 +33,7 @@ Template.registerHelper('usernameFromId', function(userId){
     if (typeof user === 'undefined'){
         return 'Guest';
     }
-/*    if (typeof user.services.github !== 'undefined'){
-        return user.services.github.username;
-    }*/
+
     return user.username || user.services.github.username;
 });
 
