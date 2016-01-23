@@ -116,9 +116,11 @@ body {
   line-height: 53px;
   font-weight: 900;
   padding: 0 1rem;
-  color: dimgray;
+  color: #000000;
   background-image: url('riotface.png');
-  background-size: cover;    
+  background-size: cover;
+  background-color: rgba(255, 255, 255, .3);
+  background-blend-mode: color;    
   /*background: #3e313c;*/
   border-bottom: 2px solid #000000;
   float: left;
@@ -129,7 +131,7 @@ body {
 .channel-menu_name {
   display: inline-block;
   padding: 0 .5rem 0 1.5rem;
-  color: #555459;
+  color: #000000;
   font-size: 1.4rem;
   font-weight: 900;
   line-height: 53px;
@@ -148,7 +150,7 @@ body {
   height: 100%;
   width: 220px;
   float: left;
-  color: #ab9ba9;
+  color: rgb(66,84,79);
   background-color: #4d394b;
   overflow-y: auto;
   overflow-x: hidden;
@@ -176,7 +178,7 @@ body {
   margin: 0 1rem .1rem;
   text-transform: uppercase;
   font-weight: 700;
-  color: #ab9ba9;
+  color: rgb(66,84,79);
   width: 165px;
   position: relative;
 }
@@ -300,9 +302,9 @@ body {
   cursor: pointer;
   /*background: #3e313c;*/
   background-color: rgba(255, 255, 255, .6);
+  background-blend-mode: color;     
   background-image: url('graff.png');
   background-size: contain;
-  background-blend-mode: color;     
   border-top: 2px solid #000000;
   padding: 7px 0 9px 8px;
   height: 4rem;
@@ -343,7 +345,7 @@ body {
 
 /* line 43, ../tests/sass/components/_user-menu.scss */
 .connection_status {
-  color: #ab9ba9;
+  color: rgb(240,183,62);
 }
 
 /* line 1, ../tests/sass/components/_input-box.scss */

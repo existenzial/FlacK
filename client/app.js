@@ -3,6 +3,14 @@ Template.messages.helpers({
     messages: Messages.find({})
 });
 
+Meteor.methods({
+    newMessage: function(message){
+        message.timestamp = Date.now();
+        message.user = Meteor.userId();
+        Messages.insert(message);
+    }
+});
+
 //if user presses 'Enter' after typing a message
 Template.footer.events({
     'keypress input': function(event){
@@ -16,14 +24,6 @@ Template.footer.events({
                 return false;
             }
         }
-    }
-});
-
-Meteor.methods({
-    newMessage: function(message){
-        message.timestamp = Date.now();
-        message.user = Meteor.userId();
-        Messages.insert(message);
     }
 });
 
