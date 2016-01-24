@@ -3,6 +3,12 @@ Template.messages.helpers({
     messages: Messages.find({})
 });
 
+Template.listings.helpers({
+    channels: function(){
+        return Channels.find();
+    }
+});
+
 //The below method on the client-side will throw an error b/c it should require permission from server first. Include insert func in server-side code
 /*Meteor.methods({
     newMessage: function(userId, message){
