@@ -2,11 +2,11 @@
     Session.set('channel', 'general');
 });*/
 
-Template.channel.events({
+/*Template.channel.events({
     'click .channel': function(e){
         Session.setPersistent('channel', this.name);
     }
-});
+});*/
 
 Template.channel.helpers({
     active: function(){
