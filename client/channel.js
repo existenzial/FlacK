@@ -1,10 +1,10 @@
-Meteor.startup(function(){
+/*Meteor.startup(function(){
     Session.set('channel', 'general');
-});
+});*/
 
 Template.channel.events({
     'click .channel': function(e){
-        Session.set('channel', this.name);
+        Session.setPersistent('channel', this.name);
     }
 });
 

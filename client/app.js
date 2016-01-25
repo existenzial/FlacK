@@ -1,6 +1,8 @@
 //grab all of the messages, useful for iterative funcs
 Template.messages.helpers({
-    messages: Messages.find({})
+    messages: function(){
+        return Messages.find({});
+    }
 });
 
 Template.listings.helpers({
@@ -47,6 +49,12 @@ Template.registerHelper('timestampToTime', function(timestamp){
     var date = new Date(timestamp),
         hours = date.getHours(),
         minutes = '0' + date.getMinutes(),
-        seconds = '0' + date.getSeconds();
-    return hours + ':' + minutes.substr(minutes.length-2) + ':' + seconds.substr(seconds.length-2);
+        seconds = '0' + date.getSeconds(),
+        suffix = (hours >= 12) ? 'PM' : 'AM';
+    
+    if(hours > 12){
+        hours = hours -12;
+    }
+    
+    return hours + ':' + minutes.substr(minutes.length-2) + ' ' + suffix;
 });

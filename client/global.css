@@ -200,11 +200,11 @@ body {
 }
 
 .channel.active {
-  background: #4c9689;
+  background: yellow;
 }
 
 .channel_prefix {
-  color: #b2d5c9;
+  color: #lightgrey;
 }
 
 .disclaimer {
