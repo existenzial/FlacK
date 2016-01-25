@@ -4,12 +4,13 @@
     <title></title>
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet" type="text/css">
 </head>
-<body>
+
+<template name="app">
     {{> header}}
     {{> loginButtons}}
     <div class="main">      
         {{> listings}}
-        {{> messages}}
+        {{> yield}}
     </div>
     {{> footer}}
-</body>
+</template>
