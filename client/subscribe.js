@@ -1,4 +1,11 @@
-Meteor.subscribe('messages');
+//Meteor.subscribe('messages');
+
+Template.messages.onCreated(function(){
+    var self = this;
+    self.autorun(function(){
+        self.subscribe('messages', Session.get('channel'));
+    });
+});
 
 Meteor.subscribe('channels');
 

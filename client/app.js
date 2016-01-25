@@ -11,6 +11,10 @@ Template.listings.helpers({
     }
 });
 
+Template.registerHelper('currentChannel', function(){
+    return Session.get('channel');
+});
+
 //The below method on the client-side will throw an error b/c it should require permission from server first. Include insert func in server-side code
 /*Meteor.methods({
     newMessage: function(userId, message){
@@ -28,13 +32,24 @@ Template.footer.events({
             var charCode = (typeof event.which === 'number') ? event.which : event.keyCode;
             if(charCode === 13){
                 event.stopPropagation();
-                Meteor.call('newMessage', {text: inputVal});
+                Meteor.call('newMessage', {
+                    text: inputVal,
+                    channel: Session.get('channel')
+                });
                 $('.input-box_text').val('');
                 return false;
             }
         }
     }
 });
+
+Meteor.methods({
+  newMessage: function (message) {
+  	message.timestamp = Date.now();
+    message.user = Meteor.userId();
+    Messages.insert(message);
+  }
+})
 
 Template.registerHelper('usernameFromId', function(userId){
     var user = Meteor.users.findOne({_id: userId});
